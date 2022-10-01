@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/*
+ * INSTANCE VARIABLE
+ */
 public class airports {
 	private int airport_id;
 	private String airport_name;
@@ -23,6 +26,9 @@ public class airports {
 	private String source_of_data;
 	
 	
+	/*
+	 * CONSTRUCTOR
+	 */
 	
 	public airports(int airport_id, String airport_name, String city, String country, String IATA_code, String ICAO_code, double latitude, double longitude, int altitude, int timezone, String DST, String database_timezone, String type, String source_of_data) {
 		this.airport_id = airport_id;
@@ -79,6 +85,9 @@ public class airports {
 	}
 		
 		
+	/*
+	 * ACCESSORS AND MUTATORS
+	 */
 				
 	
 	

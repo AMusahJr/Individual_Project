@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/*
+ * iNSTANCE VARIABLE
+ */
 public class airlines {
 	private int airline_id;
 	private String name;
@@ -16,6 +19,9 @@ public class airlines {
 	private String country;
 	private String  active;
 	
+	/*
+	 * CONSTRUCTOR
+	 */
 	
 	public airlines(int airline_id, String name, String alias, String IATA_code, String ICAO_code, String callsign, String country, String active) {
 		this.airline_id = airline_id;
@@ -47,7 +53,9 @@ public class airlines {
 				
 				
 				
-	
+	/*
+	 * ACCESSORS AND MUTATORS
+	 */
 	
 	
 

@@ -16,6 +16,8 @@ import java.util.ArrayList;
 				
 				
 			}
+			routes.populate_hashmap();
+			System.out.println(Search.Uniform_cost_search("ACC", "TML"));
 		}
 		
 

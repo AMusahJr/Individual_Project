@@ -3,9 +3,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-
-
-
 import java.io.*;
 
 
@@ -14,8 +11,9 @@ public class Objects {
 		 * Creating an airport
 		 * @return airport_object
 		 */
+	
 		
-	public static airports airport_object(String[] airport_list) {
+	public static airports airport_object(String [] airport_list) {
 		 int airport_id  = 0;
 		 String airport_name = " ";
 		 String city = " ";
@@ -30,6 +28,8 @@ public class Objects {
 		 String database_timezone = " ";
 		 String type = " ";
 		 String source_of_data = " ";
+		 
+		 
 			 
 			 
 			 
@@ -85,11 +85,18 @@ public class Objects {
 			return new routes(airline_code, airline_id, source_airport_code, source_airport_id, destination_airport_code, destination_airport_id, code_share, stops, equipment);
 			
 			
+				
+				
+				
+			}
+			
+			
 			
 			
 		}
-		public static void buffered_file_reader() {
+		public static void extra_comma() {
 			BufferedReader reader = null;
+			int counter = 0;
 			try {
 				File file = new File("/Users/musahamidujunior/Desktop/Intermediate Computer Programming/airports.csv");
 				reader = new BufferedReader(new FileReader(file));
@@ -98,6 +105,9 @@ public class Objects {
 				while ((stuff = reader.readLine()) != null) {
 					file_object = stuff.split(",");
 					if (file_object.length > 14) {
+						counter += 1;
+						
+						System.out.println(("The index of an extra comma " + counter + "is: "));
 						System.out.println(file_object[0]);
 						System.out.println(stuff);
 						System.out.println();
@@ -124,16 +134,29 @@ public class Objects {
 		 */
 		
 
-		public static ArrayList<Integer> getAirport_id(String city, String country) {
+		public static String getAirport_id(String city, String country) {
+			String airport_code = "";
 			ArrayList<Integer> airport_id = new ArrayList<>();
 			for (airports object : Mains.airport_objects) {
 				if (object.getCity().equals(city) && object.getCountry().equals(country)) {
-					airport_id.add(object.getAirport_id());
+					airport_code = object.getIATA_code();
+					
 				}
 				
 			}
-			return airport_id;
+			return airport_code;
 		}
+
+		
+		public static airports get_airport_code (String AirportCode){
+	        airports airport_objects = new airports();
+	        for (airports airport_object: Mains.airport_objects){
+	        if (java.util.Objects.equals(airport_object.getIATA_code(), AirportCode)){
+	        airport_objects = airport_object;
+	        }
+	        }return airport_objects;
+	        }
+
 		
 
 		
